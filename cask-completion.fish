@@ -86,8 +86,8 @@ complete -c cask -n '__fish_brew_cask_using_command install' -a '(__fish_brew_ca
 
 # install
 complete -f -c cask -n '__fish_brew_cask_needs_command' -a 'reinstall' -d 'Reinstalls cask'
-complete -f -c cask -n '__fish_brew_cask_using_command install' -l force -d 'Force reinstall'
-complete -c cask -n '__fish_brew_cask_using_command install' -a '(__fish_brew_cask_casks)'
+complete -f -c cask -n '__fish_brew_cask_using_command reinstall' -l force -d 'Force reinstall'
+complete -c cask -n '__fish_brew_cask_using_command reinstall' -a '(__fish_brew_cask_casks)'
 
 # list
 complete -f -c cask -n '__fish_brew_cask_needs_command' -a 'list ls' -d 'List all installed casks'

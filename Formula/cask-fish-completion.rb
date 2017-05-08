@@ -1,7 +1,7 @@
 class CaskFishCompletion < Formula
    desc "Fish completion for the brew-cask command"
    homepage "https://github.com/tmaone/homebrew-cask-fish-completion"
-   version '0.0.2'
+   version '0.0.3'
    url "https://github.com/tmaone/homebrew-cask-fish-completion/archive/#{version}.tar.gz"
 
    head do
