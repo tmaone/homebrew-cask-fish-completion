@@ -3,7 +3,7 @@ class CaskFishCompletion < Formula
    homepage "https://github.com/tmaone/homebrew-cask-fish-completion"
    version '0.0.1'
    url "https://github.com/tmaone/homebrew-cask-fish-completion/archive/#{version}.tar.gz"
-   
+
    head do
      url "https://github.com/tmaone/homebrew-cask-fish-completion.git"
    end
