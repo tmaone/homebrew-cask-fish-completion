@@ -39,8 +39,6 @@ end
 # commands #
 ############
 
-# alfred
-complete -f -c cask -n '__fish_brew_cask_needs_command' -a alfred -d 'Displays note about new built-in alfred support'
 
 # audit
 complete -f -c cask -n '__fish_brew_cask_needs_command' -a audit -d 'Check casks'
@@ -86,6 +84,11 @@ complete -f -c cask -n '__fish_brew_cask_needs_command' -a 'install' -d 'Install
 complete -f -c cask -n '__fish_brew_cask_using_command install' -l force -d 'Force install'
 complete -c cask -n '__fish_brew_cask_using_command install' -a '(__fish_brew_cask_casks)'
 
+# install
+complete -f -c cask -n '__fish_brew_cask_needs_command' -a 'reinstall' -d 'Reinstalls cask'
+complete -f -c cask -n '__fish_brew_cask_using_command install' -l force -d 'Force reinstall'
+complete -c cask -n '__fish_brew_cask_using_command install' -a '(__fish_brew_cask_casks)'
+
 # list
 complete -f -c cask -n '__fish_brew_cask_needs_command' -a 'list ls' -d 'List all installed casks'
 complete -f -c cask -n '__fish_brew_cask_using_command list' -s 1 -d 'Always format the output in a single column'
@@ -111,16 +114,28 @@ complete -f -c cask -n '__fish_brew_cask_using_command rm' -l force -d 'Uninstal
 complete -f -c cask -n '__fish_brew_cask_needs_command' -a zap -d 'Unconditionally remove all files associated with casks'
 complete -c cask -n '__fish_brew_cask_using_command zap' -a '(__fish_brew_cask_caskroom)'
 
+# outdated
+complete -f -c cask -n '__fish_brew_cask_needs_command' -a outdated -d 'Display all the installed Casks that have newer versions'
+complete -c cask -n '__fish_brew_cask_using_command outdated' -a '(__fish_brew_cask_caskroom)'
 
 ############
 # switches #
 ############
 
+# --version
+complete -f -c cask -n '__fish_brew_cask_needs_command' -l version -d 'displays the Homebrew-Cask version'
+
 # --force
 complete -f -c cask -n '__fish_brew_cask_needs_command' -l force -d 'Force install cask even exists'
 
+# --skip-cask-deps
+complete -f -c cask -n '__fish_brew_cask_needs_command' -l skip-cask-deps -d 'Skip Cask dependencies when installing'
+
+# --require-sha
+complete -f -c cask -n '__fish_brew_cask_needs_command' -l require-sha -d ' Abort Cask installation if the Cask does not have a checksum defined'
+
 # --caskroom
-complete -f -c cask -n '__fish_brew_cask_needs_command' -l caskroom -d 'Location of the Caskroom, where all binaries are stored'
+complete -f -c cask -n '__fish_brew_cask_needs_command' -l caskroom -d 'Set  location  of  the  Caskroom, where all binaries are stored'
 
 # --verbose
 complete -f -c cask -n '__fish_brew_cask_needs_command' -l verbose -d 'Give additional feedback during installation'
@@ -129,13 +144,16 @@ complete -f -c cask -n '__fish_brew_cask_needs_command' -l verbose -d 'Give addi
 complete -f -c cask -n '__fish_brew_cask_needs_command' -l appdir -d 'Target location for Application links'
 
 # --colorpickerdir
-complete -f -c cask -n '__fish_brew_cask_needs_command' -l appdir -d 'Target location for Color Picker links'
+complete -f -c cask -n '__fish_brew_cask_needs_command' -l colorpickerdir -d 'Target location for Color Picker links'
 
 # --prefpanedir
 complete -f -c cask -n '__fish_brew_cask_needs_command' -l prefpanedir -d 'Target location for Preference Pane links'
 
 # --qlplugindir
 complete -f -c cask -n '__fish_brew_cask_needs_command' -l qlplugindir -d 'Target location for QuickLook Plugin links'
+
+# --dictionarydir
+complete -f -c cask -n '__fish_brew_cask_needs_command' -l dictionarydir -d 'Target location for Dictionaries'
 
 # --fontdir
 complete -f -c cask -n '__fish_brew_cask_needs_command' -l fontdir -d 'Target location for Font links'
@@ -148,6 +166,15 @@ complete -f -c cask -n '__fish_brew_cask_needs_command' -l input_methoddir -d 'T
 
 # --internet_plugindir
 complete -f -c cask -n '__fish_brew_cask_needs_command' -l internet_plugindir -d 'Target location for Internet Plugin links'
+
+# --audio_unit_plugindir
+complete -f -c cask -n '__fish_brew_cask_needs_command' -l audio_unit_plugindir -d 'Target location for Audio Unit Plugins'
+
+# --vst_plugindir
+complete -f -c cask -n '__fish_brew_cask_needs_command' -l vst_plugindir -d 'Target location for VST Plugins'
+
+# --vst3_plugindir
+complete -f -c cask -n '__fish_brew_cask_needs_command' -l vst3_plugindir -d 'Target location for VST3 Plugins'
 
 # --screen_saverdir
 complete -f -c cask -n '__fish_brew_cask_needs_command' -l screen_saverdir -d 'Target location for Screen Saver links'
